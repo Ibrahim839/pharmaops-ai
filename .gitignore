@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Environment variables (secrets)
+.env
+
+# Data files (if they are large or mock data - adjust as needed)
+*.csv
+*.xlsx
+
+# IDE folders
+.vscode/
+.idea/
+
+# Logs and databases
+*.log
+*.sqlite3
