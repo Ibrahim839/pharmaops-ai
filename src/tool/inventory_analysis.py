@@ -4,6 +4,7 @@ from pathlib import Path
 
 DATA_PATH = (
     Path(__file__).resolve().parent.parent
+    /"assets"
     / "data"
     / "pharmaceutical-inventory-supply-chains.csv"
 )
@@ -112,9 +113,15 @@ def expiration_risk(days=90):
 
     result = result.sort_values("expiration_date")
 
+    result["expiration_date"] = result["expiration_date"].dt.strftime(
+        "%Y-%m-%d"
+    )
+
+
     return result.to_dict(orient="records")
 
 
+ 
 if __name__ == "__main__":
     print("=== Inventory Summary ===")
     print(inventory_summary())
