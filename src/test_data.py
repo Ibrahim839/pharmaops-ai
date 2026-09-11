@@ -1,3 +1,4 @@
+from numpy import average
 import pandas as pd
 
 file_path = "data/pharmaceutical-inventory-supply-chains.csv"
@@ -10,4 +11,5 @@ print(df.columns.tolist())
 
 print("\nFirst 5 rows:")
 print(df.head())
+
 
