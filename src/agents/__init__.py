@@ -1,1 +1,1 @@
-from ClaudeAgent import ClaudeAgent
+from .claudeagent import ClaudeAgent

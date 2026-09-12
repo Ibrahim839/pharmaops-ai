@@ -27,12 +27,12 @@ class InventoryController:
                 "use thies tool for inventory summaries, stockouts. "
                 "low inventory detection, and expiration risks."
             ),
-            "inpute_sechema": {
+            "input_schema": {
                 "type": "object",
                 "properties": {
                     "analysis_type": {
                         "type": "string",
-                        "enum": ["summary", "stockout", "low_inventory", "expiration"],
+                        "enum": ["summary", "stockout", "low_inventory", "expiration_risk"],
                         "description": (" the type of inventory analysis to perform "),
                     },
                     "threshold": {
@@ -51,6 +51,7 @@ class InventoryController:
                     },
                 },
                 "required": ["analysis_type"],
+                "additionalProperties": False,
             },
         }
 
@@ -58,7 +59,7 @@ class InventoryController:
         """
         Execute the correct inventory analysis function
         """
-        analysis_type = tool_input.get("analyzsis_type")
+        analysis_type = tool_input.get("analysis_type")
 
         if analysis_type == "summary":
             return inventory_summary()

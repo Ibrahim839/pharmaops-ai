@@ -1,1 +1,1 @@
-from .InventoryController import InventoryController
+from .inventorycontroller import InventoryController

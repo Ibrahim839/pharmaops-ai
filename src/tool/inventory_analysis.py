@@ -38,7 +38,7 @@ def inventory_summary():
     df = load_data()
 
     return {
-        "total_records": len(df),
+        "total_records": int(len(df)),
         "total_inventory": float(df["current_inventory_level"].sum()),
         "average_inventory": float(df["current_inventory_level"].mean()),
         "stockout_events": int(df["stockout_flag"].sum()),
@@ -53,7 +53,7 @@ def stockout_analysis():
     df = load_data()
 
     result = (
-        df.groupby(["product_id", "product_name"])
+        df.groupby(["product_id", "product_name"],dropna=False)
         .agg(
             records=("order_id", "count"),
             stockouts=("stockout_flag", "sum"),
@@ -65,7 +65,7 @@ def stockout_analysis():
 
     result["stockout_rate"] = result["stockouts"] / result["records"]
 
-    result = result.sort_values(["stockouts", "stockout_rate"], ascending=False)
+    result = result.sort_values(["stockouts", "stockout_rate"], ascending=[False,False])
 
     return result.to_dict(orient="records")
 

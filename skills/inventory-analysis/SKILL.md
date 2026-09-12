@@ -41,7 +41,7 @@ Thos request should be handled bt thr appropriate specialized skill.
 
 The primary data source is:
 
-`data/pharmaceutical-inventory-supply-chains.csv`
+`src/assets/data/pharmaceutical-inventory-supply-chains.csv`
 
 The dataset contains pharmaceutical orders, products, suppliers,
 shipments, facilities, storage information, inventory levels,
@@ -61,21 +61,21 @@ and stockout information.
 ### Inventory 
 
 - `current_inventory_level`
-- `stoukout_flag`
+- `stockout_flag`
 
 ### Order
 
 - `order_id`
 - `order_date`
 - `quantity_ordered`
-- `order_statue`
+- `order_status`
 
 ### Expiration
 
 - `storage_location_id`
-- `storage_condation`
+- `storage_condition`
 - `storage_entry_date`
-- `storage_exit_data`
+- `storage_exit_date`
 
 ### Facility
 
@@ -83,7 +83,7 @@ and stockout information.
 - `destination_facility_name`
 - `destination_city`
 - `destination_state`
-- `destination_county`
+- `destination_country`
 
 ### Supplier
 
@@ -101,7 +101,7 @@ When analyzing inventory:
 - Calculate total inventory when appropriate.
 - Calculate average inventory when appropriate.
 - Identify products or facilities with unusually low inventory.
-- Group results by producte, facility, supplier, or other dimentions requested by the user 
+- Group results by producte, facility, supplier, or other dimenسions requested by the user 
 
 Do NOT invent inventory thresholds that do not exists in the dataset.
 
@@ -112,6 +112,8 @@ If a threshold is required but is not provided, clearly state the assumption use
 ## 2. Stockout Analysis
 
 Use:
+
+`stockout_flag`
 
 to identify recorded stockout events.
 
@@ -126,10 +128,10 @@ Calculate when useful:
 
 Always distinguish between:
 
-- Recorded stockouts 
+- Recorded stockouts events
 - Potential future inventory risk
 
-Do not claim that a product will stock in the futur unless the available data supports that conclusion
+Do not claim that a product will stock in the future unless the available data supports that conclusion
 
 ---
 
@@ -160,10 +162,10 @@ to identify product or batches approaching expiration.
 When analyzing expiration:
 
 - Convert dates to proper datatime values.
-- compare expiration dates against the relvent analysis date .
-- Clearly state rhe referance date used.
+- compare expiration dates against the relevant analysis date .
+- Clearly state rhe reference date used.
 
-Do not assume that an expired profuct is unusable unless the busniss rules  explicity say so .
+Do not assume that an expired product is unusable unless the business rules  explicity say so .
 
 
 ## 5. storage Analysis 
@@ -172,7 +174,7 @@ Use:
 
 - `storage_condation`
 - `storage_entry_date`
-- `storage_exist_date`
+- `storage_exit_date`
 
 to identify storage-related pattern. 
 
@@ -182,7 +184,7 @@ Examples:
 - Storage duration
 - Products associated with specific storage conditions
 
-Do not calim that a storage condation is unsafe unless thw dataset contains an explicit pharmaceutical requirment supporting that claim.
+Do not claim that a storage condation is unsafe unless thw dataset contains an explicit pharmaceutical requirment supporting that claim.
 
 ---
 
@@ -214,7 +216,7 @@ Provide the potential operational impact.
 
 ### Recommendation
 
-Give a practocal action.
+Give a practical action.
 
 ### confidence 
 
@@ -228,9 +230,9 @@ based on the amount and quality of available evidence.
 
 # Response 
 
-Keep responses business-focused and concies .
+Keep responses business-focused and concise .
 
-Prefer tablble for ranking and comaprisons.
+Prefer tables for ranking and comparisons.
 
 For example:
 
