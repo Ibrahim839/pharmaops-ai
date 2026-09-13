@@ -1,3 +1,3 @@
 from .agents import ClaudeAgent
-from .controllers import InventoryController
+from .controllers import InventoryController, ShipmentController
 from .skills import SkillLoader, SkillRouter

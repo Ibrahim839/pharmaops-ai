@@ -1,1 +1,2 @@
 from .inventorycontroller import InventoryController
+from .shipmentcontroller import ShipmentController
