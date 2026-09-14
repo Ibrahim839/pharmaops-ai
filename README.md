@@ -347,7 +347,7 @@ The dataset is used for educational and portfolio demonstration purposes. Please
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone <https://github.com/Ibrahim839/pharmaops-ai.git>
 cd pharmaops-ai
 ```
 
