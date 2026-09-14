@@ -30,7 +30,6 @@ Do NOT use this skill as the primary skill for:
 - Shipment delivery performance 
 - Carrier performance 
 - Suuplier reliability 
-- Supplier risk 
 
 Thos request should be handled bt thr appropriate specialized skill.
 

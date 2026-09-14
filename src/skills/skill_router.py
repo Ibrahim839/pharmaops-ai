@@ -38,15 +38,3 @@ class SkillRouter:
         ):
             return "shipment-analysis"
 
-        if any(
-            keyword in question
-            for keyword in [
-                "supplier",
-                "supplier risk",
-                "reliability",
-                "vendor",
-            ]
-        ):
-            return "supplier-risk"
-
-        return None
