@@ -13,7 +13,7 @@ ENV/
 .env
 
 # Data files (if they are large or mock data - adjust as needed)
-*.csv
+
 *.xlsx
 
 # IDE folders
