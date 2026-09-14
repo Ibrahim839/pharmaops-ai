@@ -5,9 +5,9 @@ from pathlib import Path
 from anthropic import Anthropic
 from dotenv import load_dotenv
 
-from src.skills import skill_router
 from src.skills.skill_loader import SkillLoader
 from src.skills.skill_router import SkillRouter
+
 
 
 class ClaudeAgent:
@@ -37,7 +37,7 @@ class ClaudeAgent:
         self.controllers = controllers
 
         self.skill_loader = SkillLoader()
-        self,skill_router = SkillRouter()
+        self.skill_router = SkillRouter()
             
 
         self._load_environment()
@@ -155,7 +155,7 @@ class ClaudeAgent:
 
         skill_content = ""        
 
-        if skill_content:
+        if skill_name:
             skill_content = self.skill_loader.load(skill_name)
         
         system_prompt = self._build_system_prompt(skill_content)

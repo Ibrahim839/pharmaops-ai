@@ -23,9 +23,9 @@ class InventoryController:
         return {
             "name": "analyze_inventory",
             "description": (
-                "Analyze pharmaceutical fo inventory analysis. "
-                "use thies tool for inventory summaries, stockouts. "
-                "low inventory detection, and expiration risks."
+                "Analyze pharmaceutical inventory data. "
+                "Use this tool for inventory summaries, stockouts, "
+                "low inventory detection, and expiration risk."
             ),
             "input_schema": {
                 "type": "object",

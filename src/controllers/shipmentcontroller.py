@@ -5,7 +5,7 @@ from src.tool.shipment_analysis import(
     carrier_performance
 )
 
-class ShipmentController():
+class ShipmentController:
     def __init__(self):
         self.tool_definition  = self.build_tool_definition()
 
